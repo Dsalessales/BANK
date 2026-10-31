@@ -85,7 +85,7 @@ estudo-banco-digital/
 - **Ganchos `data-*`:** o HTML marca o que anima (`data-fade`, `data-split`, `data-count`, `data-cursor="Rótulo"`, `data-magnetic`, `data-scroll-to="#id"`, `data-download`). Para adicionar uma revelação a um elemento novo, basta o atributo.
 - **Ordem dos pins:** os ScrollTriggers são criados na ordem visual da página, em `main.js`. Uma seção fixa nova precisa entrar na posição certa dessa lista.
 - **Âncora dentro de seção fixa:** use `<span id="x" class="anchor" data-anchor-progress="0.8">`. O link vai para 80% do progresso daquele *pin*.
-- **Tema do header:** cada seção declara `data-header-theme="dark|light|lime"`. Uma timeline pode mudar o tema ao vivo com `section.dataset.headerThemeLive`.
+- **Tema do header:** cada seção declara `data-header-theme="dark|light|accent"`. Uma timeline pode mudar o tema ao vivo com `section.dataset.headerThemeLive`.
 - **Movimento reduzido:** com `prefers-reduced-motion`, o Lenis, os *pins* e o *scrub* são desligados e os estados finais aparecem direto.
 
 ## Testado

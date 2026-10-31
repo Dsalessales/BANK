@@ -33,7 +33,7 @@ A referência é uma página única, sem rotas. A "navegação entre páginas" a
 Navegação:
 
 - **Desktop:** header em pílula fixa, com links para 01–07, um indicador de hover que desliza, um ponto na seção ativa e o botão "Baixar materiais".
-- **Mobile (≤ 860px):** pílula com logo, botão de download e hambúrguer, que abre um menu em tela cheia (verde-sinal, revelado em círculo a partir do botão).
+- **Mobile (≤ 860px):** pílula com logo, botão de download e hambúrguer, que abre um menu em tela cheia (na cor de destaque, revelado em círculo a partir do botão).
 - Barra de progresso de leitura no topo.
 - Seções "cortina": as seções seguintes sobem sobre as anteriores, com cantos arredondados.
 
@@ -62,7 +62,7 @@ Navegação:
 **Rolagem (GSAP ScrollTrigger + Lenis)**
 
 - *Scrub* com atraso suave (0,6–0,9 s) em todas as timelines fixas.
-- Intro: o wordmark cresce, desfoca e sai; a névoa sobe com *clip-path*; a diagonal verde entra; o cartão vai para o lado e gira 180° (verso) e depois volta; o conceito entra linha a linha; o cartão some; a grade se desenha (*stroke-dashoffset*); o V se desenha e preenche; o texto do símbolo entra.
+- Intro: o wordmark cresce, desfoca e sai; a areia sobe com *clip-path*; a diagonal coral entra; o cartão vai para o lado e gira 180° (verso) e depois volta; o conceito entra linha a linha; o cartão some; a grade se desenha (*stroke-dashoffset*); o V se desenha e preenche; o texto do símbolo entra.
 - Aplicações: trilho horizontal, *parallax* interno em cada imagem (`containerAnimation`), revelação por *clip-path*, contador `01 / 06` e barra de progresso.
 - App: o celular entra inclinado e endireita. As telas trocam (deslizar, depois zoom). O saldo conta até o valor, as barras do gráfico crescem com *back-ease*, o ícone do app pulsa e o badge aparece. Os passos à esquerda acompanham com barras de progresso.
 - Nome: guias diagonais crescem, cada letra é contornada e depois preenchida, e os rótulos entram.
