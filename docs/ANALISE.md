@@ -4,7 +4,7 @@ Referência estudada: `studionextlevel.com.br/kyvo/`, uma apresentação de iden
 
 Este projeto é uma **implementação original** da mesma *experiência*: arquitetura de seções, padrões de movimento e interações. **Não reaproveita** código, textos, imagens, fotos nem fontes da referência:
 
-- A marca (VELTA), os textos e os dados são fictícios e foram escritos para este estudo.
+- A marca (VANTE), os textos e os dados são fictícios e foram escritos para este estudo.
 - Os mockups (cartão, celular, telas do app, sacola, fachada) são feitos em HTML/CSS/SVG, sem fotos.
 - As fontes são livres: Archivo Expanded no lugar da fonte de títulos da referência e Manrope no texto.
 - Todo o JavaScript e o CSS foram escritos do zero.

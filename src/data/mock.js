@@ -31,7 +31,7 @@ export const account = {
 
 export const homeScreenApps = [
   'Mapas', 'Fotos', 'Câmera', 'Clima', 'Notas', 'Música', 'Agenda', 'Ajustes',
-  'Mail', 'VELTA', 'Relógio', 'Loja',
+  'Mail', brand.name, 'Relógio', 'Loja',
 ];
 
 export const formatBRL = (v) =>

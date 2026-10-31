@@ -11,14 +11,14 @@ const H = 100;
 
 export const LETTERS = [
   { id: 'v', char: 'V', w: 100, d: 'M0 0H24L50 72L76 0H100L62 100H38Z' },
-  { id: 'e', char: 'E', w: 70, d: 'M0 0H70V20H22V40H62V60H22V80H70V100H0Z' },
-  { id: 'l', char: 'L', w: 64, d: 'M0 0H22V80H64V100H0Z' },
-  { id: 't', char: 'T', w: 80, d: 'M0 0H80V20H51V100H29V20H0Z' },
   { id: 'a', char: 'A', w: 100, d: 'M38 0H62L100 100H76L68 78H32L24 100H0ZM50 30L39.5 60H60.5Z' },
+  { id: 'n', char: 'N', w: 86, d: 'M0 0H22L64 60V0H86V100H64L22 40V100H0Z' },
+  { id: 't', char: 'T', w: 80, d: 'M0 0H80V20H51V100H29V20H0Z' },
+  { id: 'e', char: 'E', w: 70, d: 'M0 0H70V20H22V40H62V60H22V80H70V100H0Z' },
 ];
 
 /** Espaçamento entre letras (kerning simples, por par). */
-const KERN = { ve: 12, el: 12, lt: 4, ta: 6 };
+const KERN = { va: -4, an: 12, nt: 10, te: 8 };
 
 /** Layout horizontal: x de cada letra. */
 export const HORIZONTAL = (() => {
@@ -32,18 +32,23 @@ export const HORIZONTAL = (() => {
   return { pos: out, width: x, height: H };
 })();
 
-/** Layout empilhado: "VEL" em cima, "TA" embaixo, alinhado à esquerda. */
+/** Layout empilhado: as 3 primeiras letras em cima ("VAN"), o resto embaixo ("TE"). */
+export const STACK_SPLIT = 3;
 export const STACKED = (() => {
   const gap = 16;
   const p = HORIZONTAL.pos;
-  const pos = {
-    v: { x: p.v.x, y: 0 },
-    e: { x: p.e.x, y: 0 },
-    l: { x: p.l.x, y: 0 },
-    t: { x: 0, y: H + gap },
-    a: { x: 80 + KERN.ta, y: H + gap },
-  };
-  return { pos, width: p.l.x + 64, height: H * 2 + gap };
+  const top = LETTERS.slice(0, STACK_SPLIT);
+  const bottom = LETTERS.slice(STACK_SPLIT);
+  const pos = {};
+  top.forEach((l) => { pos[l.id] = { x: p[l.id].x, y: 0 }; });
+  let x = 0;
+  bottom.forEach((l, i) => {
+    pos[l.id] = { x, y: H + gap };
+    const next = bottom[i + 1];
+    x += l.w + (next ? KERN[l.id + next.id] ?? 10 : 0);
+  });
+  const last = top[top.length - 1];
+  return { pos, width: Math.max(p[last.id].x + last.w, x), height: H * 2 + gap };
 })();
 
 /** O símbolo é o V. */

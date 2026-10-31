@@ -3,7 +3,7 @@
  */
 import { gsap, ScrollTrigger, mm, BP, reduced, finePointer, $, $$, clamp } from './core.js';
 import { splitIn } from './reveal.js';
-import { HORIZONTAL, STACKED } from '../brand/wordmark.js';
+import { HORIZONTAL, STACKED, LETTERS, STACK_SPLIT } from '../brand/wordmark.js';
 import { mockLogin, formatBRL } from '../data/mock.js';
 
 /* ------------------------------------------------------------------ */
@@ -183,19 +183,19 @@ export function initStack() {
     });
     tl.from(svg, { scale: 0.85, opacity: 0, duration: 0.5 }, 0)
       .from('.stk__txt > *', { y: 40, opacity: 0, stagger: 0.1, duration: 0.5 }, 0.1);
-    ['v', 'e', 'l', 't', 'a'].forEach((id, i) => {
+    LETTERS.forEach(({ id }, i) => {
       const g = svg.querySelector(`[data-letter="${id}"]`);
       const from = H.pos[id], to = S.pos[id];
       const p = { x: from.x, y: from.y };
       tl.to(p, {
         x: to.x, y: to.y, duration: 1, ease: 'power3.inOut',
         onUpdate: () => g.setAttribute('transform', `translate(${p.x} ${p.y})`),
-      }, 0.6 + (id === 't' || id === 'a' ? 0.05 * i : 0));
+      }, 0.6 + (i >= STACK_SPLIT ? 0.05 * i : 0)); // a linha de baixo desce com leve atraso
     });
     tl.to(vb, { w: S.width, h: S.height, duration: 1, ease: 'power3.inOut', onUpdate: setVB }, 0.6)
       .to({}, { duration: 0.4 });
   } else {
-    ['v', 'e', 'l', 't', 'a'].forEach((id) => svg.querySelector(`[data-letter="${id}"]`).setAttribute('transform', `translate(${S.pos[id].x} ${S.pos[id].y})`));
+    LETTERS.forEach(({ id }) => svg.querySelector(`[data-letter="${id}"]`).setAttribute('transform', `translate(${S.pos[id].x} ${S.pos[id].y})`));
     vb.w = S.width; vb.h = S.height; setVB();
   }
 

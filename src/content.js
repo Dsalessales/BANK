@@ -3,13 +3,13 @@
  *  CONTEÚDO DO SITE — edite aqui textos, seções, cores e itens.
  *  Nada de layout ou animação depende de textos fixos no HTML.
  * ============================================================
- *  A marca "VELTA" é fictícia e serve só de placeholder.
+ *  A marca "VANTE" é fictícia e serve só de placeholder.
  *  Para trocar a forma do logo, veja src/brand/wordmark.js.
  *  Para trocar as cores, veja `colors` abaixo E src/styles/tokens.css.
  */
 
 export const brand = {
-  name: 'VELTA',
+  name: 'VANTE',
   kind: 'Banco digital',
   project: 'Identidade visual',
   tagline: 'Sempre em frente.',
@@ -40,7 +40,7 @@ export const hero = {
   conceptLine: 'Nada fica parado',
   scrollCue: 'Role para avançar',
   concept: {
-    title: ['Na VELTA,', 'tudo aponta', 'para frente.'],
+    title: ['Na VANTE,', 'tudo aponta', 'para frente.'],
     text: 'Quem está começando a vida financeira não tem um dinheiro estático: ele entra, sai, muda de plano. A marca acompanha esse ritmo com diagonais, contraste alto e uma única cor de sinal — longe da rigidez dos bancos de sempre.',
   },
   symbol: {
@@ -78,8 +78,8 @@ export const name = {
   label: 'Nome',
   aside: 'Naming',
   title: ['Cinco letras.', 'Uma direção.'],
-  text: 'VELTA vem de "vela" e "volta": movimento que se ajusta ao vento sem perder o rumo. Curto, fácil de falar e sem acento — funciona em qualquer tela.',
-  guides: ['V · diagonal', 'E · ritmo', 'L · base', 'T · eixo', 'A · avanço'],
+  text: 'VANTE vem de "avante": seguir para frente, sem pedir licença. Curto, fácil de falar e sem acento — funciona em qualquer tela.',
+  guides: ['V · diagonal', 'A · avanço', 'N · ritmo', 'T · eixo', 'E · base'],
   facts: [
     { value: 5, label: 'letras', text: 'Cabe num ícone, num cartão e numa notificação.' },
     { value: 2, label: 'sílabas', text: 'Fala-se de um jeito só, em qualquer sotaque.' },
@@ -91,7 +91,7 @@ export const name = {
 export const stacked = {
   label: 'Versão empilhada',
   title: 'O nome vira bloco.',
-  text: 'VEL em cima, TA embaixo. A versão empilhada ocupa espaços quadrados — avatar, adesivo, fachada — sem perder a leitura.',
+  text: 'VAN em cima, TE embaixo. A versão empilhada ocupa espaços quadrados — avatar, adesivo, fachada — sem perder a leitura.',
   versions: {
     label: 'Versões',
     title: ['Três formas.', 'Três fundos.'],
@@ -173,11 +173,11 @@ export const pattern = {
 
 export const closing = {
   label: 'Em uma frase',
-  phrase: 'VELTA usa diagonais, contraste e uma cor de sinal para ser o banco de quem não fica parado: leve na energia e firme na forma.',
+  phrase: 'VANTE usa diagonais, contraste e uma cor de sinal para ser o banco de quem não fica parado: leve na energia e firme na forma.',
   /** palavras (sem pontuação) que ficam em verde-sinal */
   highlight: ['diagonais,', 'sinal', 'parado:'],
   primary: 'Baixar materiais',
   secondary: 'Voltar ao início',
   kit: 'Logo, símbolo, versões, paleta e pattern · .svg (gerado no navegador)',
-  footer: ['VELTA · Banco digital', 'Estudo de identidade visual · 2026', 'Sempre em frente.'],
+  footer: ['VANTE · Banco digital', 'Estudo de identidade visual · 2026', 'Sempre em frente.'],
 };

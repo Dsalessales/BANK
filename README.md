@@ -1,6 +1,6 @@
 # Estudo · apresentação de marca com scroll animations
 
-Frontend independente e navegável de uma apresentação de identidade visual para um **banco digital fictício (VELTA)**: loader, hero fixo com cartão 3D, trilho horizontal, celular trocando telas, wordmark que se desenha e se empilha, ferramentas de tipografia e cor, pattern interativo em canvas e fechamento com revelação palavra a palavra.
+Frontend independente e navegável de uma apresentação de identidade visual para um **banco digital fictício (VANTE)**: loader, hero fixo com cartão 3D, trilho horizontal, celular trocando telas, wordmark que se desenha e se empilha, ferramentas de tipografia e cor, pattern interativo em canvas e fechamento com revelação palavra a palavra.
 
 É uma implementação original inspirada na *experiência* de uma referência de mercado. A análise completa e o mapa de seções, animações e mocks estão em **[docs/ANALISE.md](docs/ANALISE.md)**.
 
@@ -46,7 +46,7 @@ Os wrappers `.tile__par` já fazem o *parallax*, então a imagem herda o movimen
 ### Trocar a marca
 
 1. Edite o nome e os textos em `content.js`.
-2. Para outro logo, substitua os `d` dos `LETTERS` em `wordmark.js`. Mantenha os *paths* fechados para que o traço e o preenchimento funcionem. Se o novo nome tiver outra quantidade de letras, ajuste o `STACKED` (layout empilhado) e a lista de letras em `initStack()` (`motion/showcase.js`).
+2. Para outro logo, substitua os `d` dos `LETTERS` em `wordmark.js`. Mantenha os *paths* fechados para que o traço e o preenchimento funcionem. A versão empilhada é calculada sozinha: `STACK_SPLIT` (em `wordmark.js`) diz quantas letras ficam na linha de cima.
 3. Se preferir um logo em arquivo SVG pronto, cole os paths dele nas letras ou troque `wordmarkSVG()` por um `<img>`. Nesse caso, as animações de desenhar e empilhar deixam de se aplicar.
 
 ## Estrutura
