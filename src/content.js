@@ -30,7 +30,7 @@ export const nav = [
 ];
 
 export const loader = {
-  messages: ['Alinhando as diagonais', 'Calibrando o verde-sinal', 'Montando o cartão'],
+  messages: ['Alinhando as diagonais', 'Calibrando o coral', 'Montando o cartão'],
   done: 'Pronto. Sempre em frente.',
 };
 
@@ -68,7 +68,7 @@ export const app = {
   label: 'App',
   title: ['No bolso,', 'a mesma', 'direção.'],
   steps: [
-    { id: 'login', title: 'Login', text: 'Fundo verde-noite e o wordmark em verde-sinal: a marca abre o app.' },
+    { id: 'login', title: 'Login', text: 'Fundo petróleo e o wordmark em coral: a marca abre o app.' },
     { id: 'dashboard', title: 'Dashboard', text: 'Saldo em destaque, gastos em barras diagonais e só o essencial na tela.' },
     { id: 'icone', title: 'Ícone', text: 'O V sozinho resolve o ícone — reconhecível em qualquer tela inicial.' },
   ],
@@ -95,7 +95,7 @@ export const stacked = {
   versions: {
     label: 'Versões',
     title: ['Três formas.', 'Três fundos.'],
-    text: 'Horizontal com assinatura, símbolo e empilhada. Cada uma aplicada sobre verde-noite, névoa e verde-sinal.',
+    text: 'Horizontal com assinatura, símbolo e empilhada. Cada uma aplicada sobre petróleo, areia e coral.',
     hint: 'Passe o mouse para pausar · arraste para rolar',
     items: [
       { id: 'horizontal', title: 'Horizontal + assinatura' },
@@ -142,18 +142,18 @@ export const colors = {
   label: 'Cores',
   aside: 'Clique para copiar',
   title: ['Uma cor de sinal.', 'Um fundo que', 'deixa ela brilhar.'],
-  text: 'O verde-sinal salta na tela do celular, entre tantos azuis e roxos de banco. O verde-noite segura o contraste; a névoa dá respiro.',
+  text: 'O coral salta na tela do celular, entre tantos azuis e roxos de banco. O petróleo segura o contraste; a areia dá respiro.',
   palette: [
-    { id: 'lime', name: 'Verde-sinal', hex: '#C4F263', use: 'Energia da marca: destaques, ícone e CTAs.' },
-    { id: 'night', name: 'Verde-noite', hex: '#0E1716', use: 'Base e contraste. Não é preto puro: tem verde no fundo.' },
-    { id: 'mist', name: 'Névoa', hex: '#ECF0EB', use: 'Respiro para textos longos e telas claras.' },
-    { id: 'grad', name: 'Degradê sinal', hex: '#C4F263', hex2: '#ECF0EB', use: 'Transições e fundos de campanha.' },
+    { id: 'accent', name: 'Coral', hex: '#FF6F59', use: 'Energia da marca: destaques, ícone e CTAs.' },
+    { id: 'base', name: 'Petróleo', hex: '#0B2230', use: 'Base e contraste. Não é preto puro: tem azul no fundo.' },
+    { id: 'light', name: 'Areia', hex: '#F3EEE8', use: 'Respiro para textos longos e telas claras.' },
+    { id: 'grad', name: 'Degradê coral', hex: '#FF6F59', hex2: '#F3EEE8', use: 'Transições e fundos de campanha.' },
   ],
   gradient: { eyebrow: 'Degradê', lines: ['Do escuro para a luz.', 'Do sinal ao movimento.'] },
   proportion: [
-    { id: 'night', label: 'Verde-noite', value: 50 },
-    { id: 'mist', label: 'Névoa', value: 30 },
-    { id: 'lime', label: 'Verde-sinal', value: 14 },
+    { id: 'base', label: 'Petróleo', value: 50 },
+    { id: 'light', label: 'Areia', value: 30 },
+    { id: 'accent', label: 'Coral', value: 14 },
     { id: 'grad', label: 'Degradê', value: 6 },
   ],
   note: '* CMYK é uma conversão aproximada a partir do RGB; confirme com a gráfica antes de imprimir.',
@@ -174,7 +174,7 @@ export const pattern = {
 export const closing = {
   label: 'Em uma frase',
   phrase: 'VANTE usa diagonais, contraste e uma cor de sinal para ser o banco de quem não fica parado: leve na energia e firme na forma.',
-  /** palavras (sem pontuação) que ficam em verde-sinal */
+  /** palavras (sem pontuação) que ficam na cor de destaque */
   highlight: ['diagonais,', 'sinal', 'parado:'],
   primary: 'Baixar materiais',
   secondary: 'Voltar ao início',

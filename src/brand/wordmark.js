@@ -81,7 +81,7 @@ export function symbolSVG({ className = '', gradient = false, outline = false, i
   const fill = gradient ? `url(#${id}-grad)` : 'currentColor';
   return `<svg class="sym ${className}" viewBox="-4 -4 108 108" aria-hidden="true">
     ${gradient ? `<defs><linearGradient id="${id}-grad" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="var(--mist)"/><stop offset="1" stop-color="var(--lime)"/>
+      <stop offset="0" stop-color="var(--light)"/><stop offset="1" stop-color="var(--accent)"/>
     </linearGradient></defs>` : ''}
     ${outline ? `<path class="sym__stroke" d="${SYMBOL.d}" fill="none" stroke="currentColor" stroke-width="1.2" vector-effect="non-scaling-stroke" pathLength="1"/>` : ''}
     <path class="sym__fill" d="${SYMBOL.d}" fill="${fill}"/>
@@ -89,7 +89,7 @@ export function symbolSVG({ className = '', gradient = false, outline = false, i
 }
 
 /** String SVG autocontida (cores reais) — usada pelo "download" simulado. */
-export function standaloneWordmark(color = '#0E1716') {
+export function standaloneWordmark(color = '#0B2230') {
   const L = HORIZONTAL;
   const g = LETTERS.map((l) => `<path transform="translate(${L.pos[l.id].x} 0)" d="${l.d}" fill="${color}" fill-rule="evenodd"/>`).join('');
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${L.width} ${L.height}">${g}</svg>`;

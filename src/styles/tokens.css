@@ -4,16 +4,16 @@
    ============================================================ */
 :root {
   /* Paleta (mantenha em sincronia com `colors` em src/content.js) */
-  --lime: #c4f263;
-  --lime-soft: #dbf79f;
-  --night: #0e1716;
-  --night-2: #16211f;
-  --night-3: #23302d;
-  --mist: #ecf0eb;
-  --mist-2: #dde4dc;
-  --ink-dim: rgb(236 240 235 / 0.55);
-  --ink-dim-dark: rgb(14 23 22 / 0.55);
-  --grad-lime: linear-gradient(180deg, var(--mist) 0%, var(--lime) 100%);
+  --accent: #FF6F59;
+  --accent-2: #FFB3A6;
+  --base: #0B2230;
+  --base-2: #123142;
+  --base-3: #1C3F52;
+  --light: #F3EEE8;
+  --light-2: #E6DED5;
+  --ink-dim: rgb(243 238 232 / 0.55);
+  --ink-dim-dark: rgb(11 34 48 / 0.55);
+  --grad-accent: linear-gradient(180deg, var(--light) 0%, var(--accent) 100%);
 
   /* Tipografia */
   --font-display: 'Archivo Variable', 'Archivo', system-ui, sans-serif;

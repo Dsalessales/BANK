@@ -82,7 +82,7 @@ export function initHeader() {
       if (r.top <= y && r.bottom > y) theme = s.dataset.headerThemeLive || s.dataset.headerTheme;
     }
     if (header.dataset.theme !== theme) header.dataset.theme = theme;
-    document.querySelector('.progress')?.classList.toggle('on-lime', theme === 'lime');
+    document.querySelector('.progress')?.classList.toggle('on-accent', theme === 'accent');
   };
 
   // seção ativa (pontinho no link)
@@ -163,7 +163,7 @@ export function openMenu() {
   btn.setAttribute('aria-expanded', 'true');
   btn.setAttribute('aria-label', 'Fechar menu');
   $('[data-header]').dataset.themeLock = $('[data-header]').dataset.theme;
-  $('[data-header]').dataset.theme = 'lime';
+  $('[data-header]').dataset.theme = 'accent';
   lenis?.stop();
   menuTl.timeScale(1).play();
   $('.menu__item a')?.focus({ preventScroll: true });
@@ -229,9 +229,9 @@ export function initCursor() {
     else if (lab && !linkWins) { el.dataset.mode = 'label'; label.textContent = lab.dataset.cursor; }
     else if (link) { el.dataset.mode = 'link'; }
     else el.dataset.mode = '';
-    // inverter cores sobre fundos verde-sinal
-    const sec = target.closest('.theme-lime, .tile--lime, .co__strip--lime, .co__strip--grad, .vt--lime, .menu, .pt__art--card, .tile--grad');
-    el.classList.toggle('on-lime', !!sec || document.body.classList.contains('menu-open'));
+    // inverter cores sobre fundos na cor de destaque
+    const sec = target.closest('.theme-accent, .tile--accent, .co__strip--accent, .co__strip--grad, .vt--accent, .menu, .pt__art--card, .tile--grad');
+    el.classList.toggle('on-accent', !!sec || document.body.classList.contains('menu-open'));
   };
   document.addEventListener('pointerover', (e) => update(e.target));
 }
@@ -258,7 +258,7 @@ let toastTl;
 export function toast(text, swatch) {
   const el = $('[data-toast]');
   el.textContent = text;
-  el.style.setProperty('--swatch', swatch || 'var(--lime)');
+  el.style.setProperty('--swatch', swatch || 'var(--accent)');
   toastTl?.kill();
   toastTl = gsap.timeline()
     .fromTo(el, { yPercent: 150, xPercent: -50 }, { yPercent: 0, xPercent: -50, duration: 0.7, ease: 'back.out(1.6)' })

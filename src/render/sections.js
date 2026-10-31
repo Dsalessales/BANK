@@ -55,10 +55,10 @@ export const introHTML = () => `
 <section class="intro" id="inicio" data-section data-header-theme="dark" data-intro>
   <span id="simbolo" class="anchor" data-anchor-progress="0.88"></span>
   <div class="intro__stage" data-intro-stage>
-    <div class="intro__night" data-night aria-hidden="true">
+    <div class="intro__base" data-base aria-hidden="true">
       <div class="intro__beam intro__beam--a"></div><div class="intro__beam intro__beam--b"></div>
     </div>
-    <div class="intro__mist" data-mist aria-hidden="true"><div class="intro__diag" data-diag></div></div>
+    <div class="intro__light" data-light aria-hidden="true"><div class="intro__diag" data-diag></div></div>
 
     <div class="intro__hero" data-hero>
       <div class="intro__eyebrow label"><span class="label--dim">${hero.eyebrow[0]}</span><span>${hero.eyebrow[1]}</span></div>
@@ -104,17 +104,17 @@ export const introHTML = () => `
 const appTile = (it) => {
   switch (it.kind) {
     case 'signature':
-      return `<div class="tile tile--mist tile--sig"><div class="tile__par">${wordmarkSVG({ layout: 'stacked' })}<span class="tile__hl">${brand.tagline}</span></div></div>`;
+      return `<div class="tile tile--light tile--sig"><div class="tile__par">${wordmarkSVG({ layout: 'stacked' })}<span class="tile__hl">${brand.tagline}</span></div></div>`;
     case 'card':
       return `<div class="tile tile--grad"><div class="tile__par tile__card">${card({ back: false, className: 'card--tile' })}</div></div>`;
     case 'icon':
-      return `<div class="tile tile--night tile--icon"><div class="tile__par"><span class="bigicon">${symbolSVG()}</span><span class="bigicon__name">${brand.name}</span></div></div>`;
+      return `<div class="tile tile--base tile--icon"><div class="tile__par"><span class="bigicon">${symbolSVG()}</span><span class="bigicon__name">${brand.name}</span></div></div>`;
     case 'campaign':
-      return `<div class="tile tile--night tile--camp"><div class="tile__par"><div class="camp__shapes"><i></i><i></i><i></i></div><p class="camp__h">${it.headline.join('<br>')}</p><span class="camp__wm">${wordmarkSVG()}</span></div></div>`;
+      return `<div class="tile tile--base tile--camp"><div class="tile__par"><div class="camp__shapes"><i></i><i></i><i></i></div><p class="camp__h">${it.headline.join('<br>')}</p><span class="camp__wm">${wordmarkSVG()}</span></div></div>`;
     case 'interface':
-      return `<div class="tile tile--lime tile--ui"><div class="tile__par"><div class="ph ph--flat"><div class="ph__frame"><div class="ph__screen">${screenDashboard()}</div></div></div></div></div>`;
+      return `<div class="tile tile--accent tile--ui"><div class="tile__par"><div class="ph ph--flat"><div class="ph__frame"><div class="ph__screen">${screenDashboard()}</div></div></div></div></div>`;
     case 'signage':
-      return `<div class="tile tile--mist tile--sign"><div class="tile__par"><div class="sign"><span class="sign__sym">${symbolSVG()}</span><span class="sign__txt">${wordmarkSVG()}<em>${it.headline}</em></span></div><div class="sign__floor"></div></div></div>`;
+      return `<div class="tile tile--light tile--sign"><div class="tile__par"><div class="sign"><span class="sign__sym">${symbolSVG()}</span><span class="sign__txt">${wordmarkSVG()}<em>${it.headline}</em></span></div><div class="sign__floor"></div></div></div>`;
     default:
       return '';
   }
@@ -142,7 +142,7 @@ export const applicationsHTML = () => `
 /* ------------------------------------------------------------------ */
 /* 03 — App (fixo, telas trocando)                                     */
 export const appHTML = () => `
-<section class="ap theme-lime curtain" id="app" data-section data-header-theme="lime" data-ap>
+<section class="ap theme-accent curtain" id="app" data-section data-header-theme="accent" data-ap>
   <div class="ap__stage" data-ap-stage>
     <svg class="ap__bigv" viewBox="-2 -2 104 104" aria-hidden="true" data-ap-bigv><path d="${SYMBOL.d}" pathLength="1"/></svg>
     <div class="ap__lines" aria-hidden="true"><i></i><i></i><i></i></div>
@@ -192,13 +192,13 @@ const versionTile = (kind, bg) => {
 };
 
 export const stackHTML = () => {
-  const bgs = ['night', 'mist', 'lime'];
+  const bgs = ['base', 'light', 'accent'];
   const tiles = stacked.versions.items.flatMap((v) => bgs.map((b) => versionTile(v.id, b)));
   const colA = tiles.filter((_, i) => i % 2 === 0);
   const colB = tiles.filter((_, i) => i % 2 === 1);
   const col = (arr, dir) => `<div class="vloop__col" data-vloop-col data-dir="${dir}"><div class="vloop__inner">${arr.join('')}${arr.join('')}</div></div>`;
   return `
-<section class="stk theme-lime" data-section data-header-theme="lime" data-stk>
+<section class="stk theme-accent" data-section data-header-theme="accent" data-stk>
   <div class="stk__stage" data-stk-stage>
     <div class="stk__head wrap label"><span><span class="degree">04.1</span> ${stacked.label}</span><span class="label--dim" data-stk-meta>1 linha</span></div>
     ${wordmarkSVG({ className: 'stk__wm', label: brand.name })}
@@ -272,9 +272,9 @@ export const colorsHTML = () => `
     ${colors.palette.map((c, i) => {
       const rgb = hexToRgb(c.hex);
       const cmyk = rgbToCmyk(rgb);
-      const fg = c.id === 'night' ? '#ECF0EB' : '#0E1716';
-      const ratio = c.id === 'night' ? contrast(c.hex, colors.palette[0].hex) : contrast(c.hex, '#0E1716');
-      const vs = c.id === 'night' ? 'sobre verde-sinal' : 'com verde-noite';
+      const fg = c.id === 'base' ? '#F3EEE8' : '#0B2230';
+      const ratio = c.id === 'base' ? contrast(c.hex, colors.palette[0].hex) : contrast(c.hex, '#0B2230');
+      const vs = c.id === 'base' ? 'sobre coral' : 'com petróleo';
       const copy = c.hex2 ? `${c.hex}, ${c.hex2}` : c.hex;
       return `<li class="co__strip co__strip--${c.id}${i === 0 ? ' is-open' : ''}" data-co-strip>
         <button type="button" data-copy="${copy}" data-cursor="Copiar" aria-label="Copiar ${c.name} ${copy}">
@@ -310,7 +310,7 @@ export const colorsHTML = () => `
 /* 07 — Grafismos                                                      */
 const patternArt = (kind) => {
   if (kind === 'pattern-card') return `<div class="pt__art pt__art--card"><div class="pt__pat"></div>${card({ back: false, className: 'card--pattern' })}</div>`;
-  if (kind === 'pattern-bag') return `<div class="pt__art pt__art--bag"><div class="bag"><span class="bag__handle"></span><div class="bag__body"><div class="pt__pat pt__pat--lime"></div><span class="bag__wm">${wordmarkSVG()}</span></div></div></div>`;
+  if (kind === 'pattern-bag') return `<div class="pt__art pt__art--bag"><div class="bag"><span class="bag__handle"></span><div class="bag__body"><div class="pt__pat pt__pat--accent"></div><span class="bag__wm">${wordmarkSVG()}</span></div></div></div>`;
   return `<div class="pt__art pt__art--a"><div class="pt__pat pt__pat--big"></div><span class="pt__sym">${symbolSVG()}</span></div>`;
 };
 
@@ -339,7 +339,7 @@ export const closingHTML = () => {
     ${secHead('08', closing.label)}
     <p class="cl__phrase display" data-cl-phrase aria-label="${closing.phrase}">${words.map((w) => `<span class="w${closing.highlight.includes(w) ? ' w--hl' : ''}" aria-hidden="true">${w}</span>`).join(' ')}</p>
     <div class="cl__actions">
-      <a href="#" class="btn btn--lime" data-download data-magnetic><span class="btn__fill" aria-hidden="true"></span>${rollText(closing.primary)}${arrow('right')}</a>
+      <a href="#" class="btn btn--accent" data-download data-magnetic><span class="btn__fill" aria-hidden="true"></span>${rollText(closing.primary)}${arrow('right')}</a>
       <a href="#inicio" class="btn btn--ghost" data-scroll-to="#inicio" data-magnetic>${rollText(closing.secondary)}${arrow('up')}</a>
     </div>
     <p class="label label--dim cl__kit">${closing.kit}</p>

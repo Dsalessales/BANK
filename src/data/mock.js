@@ -75,21 +75,21 @@ function buildKitSVG() {
     .map((c, i) => {
       const x = 40 + i * 230;
       const fill = c.hex2 ? `url(#g)` : c.hex;
-      return `<rect x="${x}" y="520" width="210" height="160" rx="14" fill="${fill}" stroke="#0E1716" stroke-opacity=".15"/>
-        <text x="${x}" y="710" font-family="sans-serif" font-size="18" fill="#0E1716">${c.name} · ${c.hex}${c.hex2 ? ' → ' + c.hex2 : ''}</text>`;
+      return `<rect x="${x}" y="520" width="210" height="160" rx="14" fill="${fill}" stroke="#0B2230" stroke-opacity=".15"/>
+        <text x="${x}" y="710" font-family="sans-serif" font-size="18" fill="#0B2230">${c.name} · ${c.hex}${c.hex2 ? ' → ' + c.hex2 : ''}</text>`;
     })
     .join('');
-  const wm = standaloneWordmark('#0E1716').replace('<svg', '<svg x="40" y="60" width="600" height="133"');
-  const wmLight = standaloneWordmark('#C4F263').replace('<svg', '<svg x="520" y="300" width="380" height="84"');
+  const wm = standaloneWordmark('#0B2230').replace('<svg', '<svg x="40" y="60" width="600" height="133"');
+  const wmLight = standaloneWordmark('#FF6F59').replace('<svg', '<svg x="520" y="300" width="380" height="84"');
   return `<svg xmlns="http://www.w3.org/2000/svg" width="980" height="760" viewBox="0 0 980 760">
-  <defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#C4F263"/><stop offset="1" stop-color="#ECF0EB"/></linearGradient></defs>
-  <rect width="980" height="760" fill="#ECF0EB"/>
+  <defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#FF6F59"/><stop offset="1" stop-color="#F3EEE8"/></linearGradient></defs>
+  <rect width="980" height="760" fill="#F3EEE8"/>
   ${wm}
-  <rect x="40" y="240" width="420" height="240" rx="18" fill="#C4F263"/>
-  <path transform="translate(190 300) scale(1.2)" d="${SYMBOL.d}" fill="#0E1716"/>
-  <rect x="480" y="240" width="460" height="240" rx="18" fill="#0E1716"/>
+  <rect x="40" y="240" width="420" height="240" rx="18" fill="#FF6F59"/>
+  <path transform="translate(190 300) scale(1.2)" d="${SYMBOL.d}" fill="#0B2230"/>
+  <rect x="480" y="240" width="460" height="240" rx="18" fill="#0B2230"/>
   ${wmLight}
   ${sw}
-  <text x="40" y="40" font-family="sans-serif" font-size="14" fill="#0E1716" opacity=".6">${brand.name} · kit de marca (mock gerado no navegador)</text>
+  <text x="40" y="40" font-family="sans-serif" font-size="14" fill="#0B2230" opacity=".6">${brand.name} · kit de marca (mock gerado no navegador)</text>
 </svg>`;
 }

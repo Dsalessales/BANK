@@ -1,7 +1,7 @@
 /**
  * 00 + 01 — Intro fixa (pin).
  *  Entrada pós-loader → hero (wordmark gigante + cartão flutuando com tilt)
- *  → rolagem: wordmark sai, fundo vira névoa com diagonal, cartão vira (verso)
+ *  → rolagem: wordmark sai, fundo vira areia com diagonal, cartão vira (verso)
  *  → conceito → cartão sai → grade + V se desenham → texto do símbolo.
  */
 import { gsap, ScrollTrigger, mm, BP, reduced, finePointer, $, $$ } from './core.js';
@@ -10,7 +10,7 @@ export function introEnter() {
   if (reduced) return gsap.timeline();
   const letters = $$('.intro__wm .wm__letter');
   return gsap.timeline({ defaults: { ease: 'expo.out' } })
-    .from('.intro__night', { opacity: 0, duration: 1.2 }, 0)
+    .from('.intro__base', { opacity: 0, duration: 1.2 }, 0)
     .from(letters, { yPercent: 120, opacity: 0, rotate: 6, transformOrigin: '0% 100%', duration: 1.5, stagger: 0.07 }, 0.05)
     .from('.intro__tag span', { opacity: 0, y: 12, duration: 0.8, stagger: 0.02 }, 0.6)
     .from('[data-card-rig]', { yPercent: 0, y: '70vh', rotate: -28, duration: 1.8, ease: 'expo.out' }, 0.25)
@@ -48,7 +48,7 @@ export function initIntro() {
     // estado final legível, sem pin
     gsap.set('[data-concept]', { visibility: 'visible' });
     gsap.set(['[data-hero]', '[data-card-rig]', '[data-symcam]', '[data-symtxt]'], { display: 'none' });
-    gsap.set('[data-mist]', { clipPath: 'inset(0% 0 0 0)' });
+    gsap.set('[data-light]', { clipPath: 'inset(0% 0 0 0)' });
     return;
   }
 
@@ -70,10 +70,10 @@ export function initIntro() {
       },
     });
 
-    /* Fase 1 — hero sai, névoa entra com a diagonal, cartão vai ao lado e vira */
+    /* Fase 1 — hero sai, areia entra com a diagonal, cartão vai ao lado e vira */
     tl.to('.intro__wm', { scale: 1.35, yPercent: -40, opacity: 0, filter: 'blur(12px)', duration: 1.2 }, 0)
       .to('.intro__tag, .intro__eyebrow, .intro__foot', { opacity: 0, y: -30, duration: 0.6 }, 0)
-      .to('[data-mist]', { clipPath: 'inset(0% 0 0 0)', duration: 1.1, ease: 'power3.inOut' }, 0.25)
+      .to('[data-light]', { clipPath: 'inset(0% 0 0 0)', duration: 1.1, ease: 'power3.inOut' }, 0.25)
       .fromTo('[data-diag]', { clipPath: 'polygon(100% 0, 100% 0, 100% 100%, 100% 100%)' }, { clipPath: mobile ? 'polygon(70% 0, 100% 0, 100% 100%, 92% 100%)' : 'polygon(58% 0, 100% 0, 100% 100%, 84% 100%)', duration: 1.2, ease: 'power3.inOut' }, 0.5)
       .to(rig, mobile
         ? { left: '50%', top: '34%', scale: 0.8, rotate: -8, duration: 1.4 }

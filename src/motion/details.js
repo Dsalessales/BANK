@@ -105,7 +105,7 @@ export function initPattern() {
   const canvas = $('[data-pt-canvas]', field);
   const ctx = canvas.getContext('2d');
   const css = getComputedStyle(document.documentElement);
-  const LIME = css.getPropertyValue('--lime').trim() || '#c4f263';
+  const ACCENT = css.getPropertyValue('--accent').trim() || '#FF6F59';
   let W = 0, H = 0, dpr = 1, cells = [], visible = false;
   const mouse = { x: -9999, y: -9999, tx: -9999, ty: -9999, active: false };
   const BASE = -68 * (Math.PI / 180); // ângulo das diagonais do V
@@ -159,7 +159,7 @@ export function initPattern() {
       ctx.translate(c.x, c.y);
       ctx.rotate(c.a);
       ctx.globalAlpha = 0.16 + c.glow * 0.84;
-      ctx.fillStyle = c.glow > 0.02 ? LIME : '#ecf0eb';
+      ctx.fillStyle = c.glow > 0.02 ? ACCENT : '#F3EEE8';
       // fragmento = paralelogramo (pedaço da haste do V)
       ctx.beginPath();
       ctx.moveTo(-len, -1.6 - c.glow * 1.8); ctx.lineTo(len, -1.6 - c.glow * 1.8);
