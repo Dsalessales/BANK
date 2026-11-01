@@ -12,7 +12,6 @@ export function introEnter() {
   return gsap.timeline({ defaults: { ease: 'expo.out' } })
     .from('.intro__base', { opacity: 0, duration: 1.2 }, 0)
     .from(letters, { yPercent: 120, opacity: 0, rotate: 6, transformOrigin: '0% 100%', duration: 1.5, stagger: 0.07 }, 0.05)
-    .from('.intro__tag span', { opacity: 0, y: 12, duration: 0.8, stagger: 0.02 }, 0.6)
     .from('[data-card-rig]', { yPercent: 0, y: '70vh', rotate: -28, duration: 1.8, ease: 'expo.out' }, 0.25)
     .from('.intro__eyebrow, .intro__foot', { opacity: 0, y: 16, duration: 1, stagger: 0.1 }, 0.7);
 }
@@ -72,7 +71,7 @@ export function initIntro() {
 
     /* Fase 1 — hero sai, areia entra com a diagonal, cartão vai ao lado e vira */
     tl.to('.intro__wm', { scale: 1.35, yPercent: -40, opacity: 0, filter: 'blur(12px)', duration: 1.2 }, 0)
-      .to('.intro__tag, .intro__eyebrow, .intro__foot', { opacity: 0, y: -30, duration: 0.6 }, 0)
+      .to('.intro__eyebrow, .intro__foot', { opacity: 0, y: -30, duration: 0.6 }, 0)
       .to('[data-light]', { clipPath: 'inset(0% 0 0 0)', duration: 1.1, ease: 'power3.inOut' }, 0.25)
       .fromTo('[data-diag]', { clipPath: 'polygon(100% 0, 100% 0, 100% 100%, 100% 100%)' }, { clipPath: mobile ? 'polygon(44% 0, 100% 0, 100% 50%, 100% 50%)' : 'polygon(58% 0, 100% 0, 100% 100%, 84% 100%)', duration: 1.2, ease: 'power3.inOut' }, 0.5)
       .to(rig, mobile

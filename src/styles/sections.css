@@ -19,8 +19,6 @@
 .intro__wm { align-self: center; color: var(--light); line-height: 0; }
 .intro__wm-svg { width: 100%; height: auto; overflow: visible; }
 .intro__wm .wm__letter { transform-box: fill-box; }
-.intro__tag { position: absolute; left: 50%; top: 66%; transform: translateX(-50%); font-size: clamp(0.8rem, 1.4vw, 1.2rem); letter-spacing: 0.4em; white-space: nowrap; }
-.intro__tag span { display: inline-block; }
 .intro__foot { display: flex; justify-content: space-between; align-items: end; }
 .intro__cue { display: inline-flex; align-items: center; gap: 0.6rem; }
 .intro__cue-line { position: relative; width: 2.5rem; height: 1px; background: rgb(243 238 232 / 0.25); overflow: hidden; }
@@ -290,7 +288,6 @@ input[type="range"]::-moz-range-thumb { width: 12px; height: 12px; border-radius
   .intro__concept, .intro__symtxt { width: auto; right: var(--gutter); top: auto; bottom: clamp(1.5rem, 6vh, 3rem); transform: none; gap: 1rem; }
   .intro__text { font-size: 0.95rem; }
   .intro__wm { margin-bottom: 26vh; margin-bottom: 26svh; }
-  .intro__tag { top: 47%; letter-spacing: 0.25em; }
   .card-rig { top: 71%; }
   .symcam { right: 50%; top: 30%; transform: translate(50%, -50%); width: min(60vw, 18rem); }
   .nm__intro, .co__intro, .ty__top, .vs__grid { grid-template-columns: 1fr; gap: 2rem; }

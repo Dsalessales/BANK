@@ -63,7 +63,6 @@ export const introHTML = () => `
     <div class="intro__hero" data-hero>
       <div class="intro__eyebrow label"><span class="label--dim">${hero.eyebrow[0]}</span><span>${hero.eyebrow[1]}</span></div>
       <h1 class="intro__wm" aria-label="${brand.name} — ${brand.tagline}">${wordmarkSVG({ className: 'intro__wm-svg' })}</h1>
-      <p class="intro__tag label" aria-hidden="true">${brand.tagline.split('').map((c) => `<span>${c === ' ' ? '&nbsp;' : c}</span>`).join('')}</p>
       <div class="intro__foot label">
         <span><span class="label--dim">${hero.conceptLabel}</span><br>${hero.conceptLine}</span>
         <span class="intro__cue">${hero.scrollCue} <i class="intro__cue-line"></i></span>
