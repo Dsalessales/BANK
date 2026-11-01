@@ -109,8 +109,11 @@ export function initHeader() {
     const y = window.scrollY;
     const menuOpen = document.body.classList.contains('menu-open');
     const jumping = document.body.hasAttribute('data-nav-jump'); // rolagem disparada por link: header fica visível
-    if (!menuOpen && !jumping) header.classList.toggle('is-hidden', y > lastY + 4 && y > window.innerHeight * 0.6);
-    if (y < lastY - 4) header.classList.remove('is-hidden');
+    // só muda de estado com movimento claro; parado ou rolando devagar, o header fica como está
+    // (antes ele reaparecia a cada atualização lenta e "piscava")
+    const dy = y - lastY;
+    if (y < window.innerHeight * 0.6 || dy < -6) header.classList.remove('is-hidden');
+    else if (dy > 6 && !menuOpen && !jumping) header.classList.add('is-hidden');
     lastY = y;
     setTheme();
     setActive();
