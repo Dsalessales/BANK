@@ -211,7 +211,7 @@ export const stackHTML = () => {
         ${splitTitle(stacked.versions.title, 'display display--s')}
         <p data-fade>${stacked.versions.text}</p>
         <ul class="vs__list">${stacked.versions.items.map((v, i) => `<li data-vs-item="${v.id}" data-fade><span class="degree">${pad(i + 1)}</span><b>${v.title}</b><span class="label">3 fundos ${arrow('ne')}</span></li>`).join('')}</ul>
-        <p class="label label--dim">${stacked.versions.hint}</p>
+        <p class="label label--dim"><span class="only-mouse">${stacked.versions.hint}</span><span class="only-touch">${stacked.versions.hintTouch}</span></p>
       </div>
       <div class="vloop" data-vloop data-cursor="Arraste" aria-label="Versões da marca">${col(colA, 1)}${col(colB, -1)}</div>
     </div>
@@ -238,7 +238,7 @@ export const typeHTML = () => {
         <div class="ty__tabs" role="tablist">${typography.fonts.map((f, i) => `<button role="tab" type="button" class="ty__tab${i === 0 ? ' is-on' : ''}" aria-selected="${i === 0}" data-ty-font="${f.id}">${f.name}</button>`).join('')}</div>
         <p class="lead" data-ty-text>${d.text}</p>
         <label class="ty__range label">Peso <input type="range" min="200" max="900" step="1" value="800" data-ty-weight></label>
-        <p class="label label--dim">Dica: mova o cursor sobre o “Aa” para variar o peso.</p>
+        <p class="label label--dim"><span class="only-mouse">Dica: mova o cursor sobre o “Aa” para variar o peso.</span><span class="only-touch">Dica: arraste o dedo para os lados sobre o “Aa” para variar o peso.</span></p>
       </div>
     </div>
     <ul class="ty__glyphs" data-ty-glyphs aria-label="Caracteres da fonte de títulos">

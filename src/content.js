@@ -97,6 +97,7 @@ export const stacked = {
     title: ['Três formas.', 'Três fundos.'],
     text: 'Horizontal com assinatura, símbolo e empilhada. Cada uma aplicada sobre petróleo, areia e coral.',
     hint: 'Passe o mouse para pausar · arraste para rolar',
+    hintTouch: 'As versões passam sozinhas enquanto você rola',
     items: [
       { id: 'horizontal', title: 'Horizontal + assinatura' },
       { id: 'simbolo', title: 'Símbolo' },

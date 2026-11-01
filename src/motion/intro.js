@@ -74,7 +74,7 @@ export function initIntro() {
     tl.to('.intro__wm', { scale: 1.35, yPercent: -40, opacity: 0, filter: 'blur(12px)', duration: 1.2 }, 0)
       .to('.intro__tag, .intro__eyebrow, .intro__foot', { opacity: 0, y: -30, duration: 0.6 }, 0)
       .to('[data-light]', { clipPath: 'inset(0% 0 0 0)', duration: 1.1, ease: 'power3.inOut' }, 0.25)
-      .fromTo('[data-diag]', { clipPath: 'polygon(100% 0, 100% 0, 100% 100%, 100% 100%)' }, { clipPath: mobile ? 'polygon(70% 0, 100% 0, 100% 100%, 92% 100%)' : 'polygon(58% 0, 100% 0, 100% 100%, 84% 100%)', duration: 1.2, ease: 'power3.inOut' }, 0.5)
+      .fromTo('[data-diag]', { clipPath: 'polygon(100% 0, 100% 0, 100% 100%, 100% 100%)' }, { clipPath: mobile ? 'polygon(44% 0, 100% 0, 100% 50%, 100% 50%)' : 'polygon(58% 0, 100% 0, 100% 100%, 84% 100%)', duration: 1.2, ease: 'power3.inOut' }, 0.5)
       .to(rig, mobile
         ? { left: '50%', top: '34%', scale: 0.8, rotate: -8, duration: 1.4 }
         : { left: '72%', top: '50%', scale: 1.08, rotate: -10, duration: 1.4 }, 0.2)

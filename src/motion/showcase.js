@@ -226,10 +226,10 @@ function initVersionsLoop() {
   });
 
   // pausa no hover
-  loop.addEventListener('pointerenter', () => { target = 0; });
+  loop.addEventListener('pointerenter', (e) => { if (e.pointerType === 'mouse') target = 0; });
   loop.addEventListener('pointerleave', () => { target = reduced ? 0 : 0.5; drag = null; });
   // arrastar para rolar
-  loop.addEventListener('pointerdown', (e) => { drag = { y: e.clientY }; loop.setPointerCapture(e.pointerId); });
+  loop.addEventListener('pointerdown', (e) => { if (e.pointerType !== 'mouse') return; drag = { y: e.clientY }; loop.setPointerCapture(e.pointerId); });
   loop.addEventListener('pointermove', (e) => {
     if (!drag) return;
     const dy = e.clientY - drag.y; drag.y = e.clientY;

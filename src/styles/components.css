@@ -98,6 +98,7 @@
 .scr__label { font-size: 0.62em; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.6; }
 .scr__amount { font-family: var(--font-display); font-stretch: 125%; font-weight: 800; font-size: 1.45em; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; transition: filter 0.4s; }
 .scr__amount.is-hidden { filter: blur(0.35em); }
+.scr__eye::before { content: ""; position: absolute; inset: -0.9em; } /* área de toque maior */
 .scr__eye { position: absolute; right: 1em; top: 0.9em; width: 1.3em; color: var(--accent); z-index: 1; }
 .scr__actions { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.4em; font-size: 0.6em; font-weight: 700; text-align: center; }
 .scr__actions span { display: grid; justify-items: center; gap: 0.35em; }
