@@ -26,6 +26,8 @@
 @keyframes cue { 0% { transform: translateX(-100%); } 60%, 100% { transform: translateX(100%); } }
 
 .card-rig { position: absolute; z-index: 4; left: 50%; top: 58%; width: 0; height: 0; perspective: 1400px; }
+/* camadas separadas: rig = rolagem · enter = entrada · tilt = mouse · card = giro e flutuação */
+.card-rig__enter { position: absolute; transform-style: preserve-3d; }
 .card-rig__tilt { position: absolute; transform-style: preserve-3d; }
 .card--hero { --cw: clamp(15rem, 27vw, 25rem); position: absolute; left: calc(var(--cw) / -2); top: calc(var(--cw) / -3.172); }
 

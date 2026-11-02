@@ -12,7 +12,9 @@ export function introEnter() {
   return gsap.timeline({ defaults: { ease: 'expo.out' } })
     .from('.intro__base', { opacity: 0, duration: 1.2 }, 0)
     .from(letters, { yPercent: 120, opacity: 0, rotate: 6, transformOrigin: '0% 100%', duration: 1.5, stagger: 0.07 }, 0.05)
-    .from('[data-card-rig]', { yPercent: 0, y: '70vh', rotate: -28, duration: 1.8, ease: 'expo.out' }, 0.25)
+    // a entrada anima uma camada própria: se animasse o rig, a timeline da rolagem gravaria a posição
+    // inicial da entrada (fora da tela) como ponto de partida e devolveria o cartão para lá ao voltar ao topo
+    .from('[data-card-enter]', { y: '70vh', rotate: -28, duration: 1.8, ease: 'expo.out' }, 0.25)
     .from('.intro__eyebrow, .intro__foot', { opacity: 0, y: 16, duration: 1, stagger: 0.1 }, 0.7);
 }
 

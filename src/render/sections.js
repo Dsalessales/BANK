@@ -75,7 +75,7 @@ export const introHTML = () => `
       <p class="intro__text">${hero.concept.text}</p>
     </div>
 
-    <div class="card-rig" data-card-rig><div class="card-rig__tilt" data-card-tilt>${card({ className: 'card--hero' })}</div></div>
+    <div class="card-rig" data-card-rig><div class="card-rig__enter" data-card-enter><div class="card-rig__tilt" data-card-tilt>${card({ className: 'card--hero' })}</div></div></div>
 
     <div class="symcam" data-symcam aria-hidden="true">
       <svg class="symcam__grid" viewBox="0 0 100 100" preserveAspectRatio="none">
